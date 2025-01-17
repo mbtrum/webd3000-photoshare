@@ -10,7 +10,7 @@ namespace PhotoShare.Controllers
         {      
         }
 
-        // Home page - display all photos
+        // Home page - ../ or ../Home/Index
         public IActionResult Index()
         {
             // To-do: Entity Framework - fetch all photos
@@ -51,10 +51,10 @@ namespace PhotoShare.Controllers
             photos.Add(photo2);
             photos.Add(photo3);
 
-            return View();
+            return View(photos);
         }
 
-        // Display a photo by id
+        // Display a photo by id - ../Home/DisplayPhoto/
         public IActionResult DisplayPhoto(int id)
         {
             // To-do: Entity Framework - fetch the photo by id
@@ -68,9 +68,10 @@ namespace PhotoShare.Controllers
                 IsPublic = true
             };
 
-            return View();
+            return View(photo);
         }
 
+        // Privacy page - ../Home/Privacy/
         public IActionResult Privacy()
         {
             return View();

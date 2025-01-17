@@ -1,1 +1,41 @@
-﻿<h1>The Photo Display Page</h1>
+﻿@model PhotoShare.Models.Photo
+
+@{
+    ViewData["Title"] = "Photo Details";
+}
+
+<table class="table">
+    <tr>
+        <td>
+            @Html.DisplayNameFor(model => model.PhotoId)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.PhotoId)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(model => model.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Title)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(model => model.CreatedAt)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.CreatedAt)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @Html.DisplayNameFor(model => model.ImageFilename)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.ImageFilename)
+        </td>
+    </tr>
+</table>
+
