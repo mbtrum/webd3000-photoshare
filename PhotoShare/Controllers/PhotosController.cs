@@ -15,6 +15,7 @@ namespace PhotoShare.Controllers
     {
         private readonly PhotoShareContext _context;
 
+        // Constructor
         public PhotosController(PhotoShareContext context)
         {
             _context = context;
