@@ -2,6 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using PhotoShare.Data;
 var builder = WebApplication.CreateBuilder(args);
+
 builder.Services.AddDbContext<PhotoShareContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("PhotoShareContext") ?? throw new InvalidOperationException("Connection string 'PhotoShareContext' not found.")));
 

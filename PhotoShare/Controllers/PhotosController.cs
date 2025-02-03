@@ -21,30 +21,15 @@ namespace PhotoShare.Controllers
             _context = context;
         }
 
+        // Deleted the following action methods:
+        // GET: Photos/Details/5
+
         // GET: Photos
         public async Task<IActionResult> Index()
         {
             var photos = await _context.Photo.ToListAsync();
 
             return View(photos);
-        }
-
-        // GET: Photos/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var photo = await _context.Photo.FirstOrDefaultAsync(m => m.PhotoId == id);
-
-            if (photo == null)
-            {
-                return NotFound();
-            }
-
-            return View(photo);
         }
 
         // GET: Photos/Create

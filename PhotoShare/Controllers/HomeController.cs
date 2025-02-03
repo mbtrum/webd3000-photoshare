@@ -18,8 +18,8 @@ namespace PhotoShare.Controllers
         // Home page - ../ or ../Home/Index
         public async Task<IActionResult> Index()
         {
-            // get the photos from db
-            var photos = await _context.Photo.ToListAsync();
+            // get the photos from db, where visibility is true
+            var photos = await _context.Photo.Where(m => m.IsVisible == true).ToListAsync();
 
             return View(photos);
         }
