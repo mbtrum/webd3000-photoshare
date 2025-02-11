@@ -28,7 +28,9 @@ namespace PhotoShare.Controllers
         public async Task<IActionResult> PhotoDetails(int id)
         {
             // get photo from db by id
-            var photo = await _context.Photo.FirstOrDefaultAsync(m => m.PhotoId == id);
+            var photo = await _context.Photo
+                .Include(m => m.Tags)
+                .FirstOrDefaultAsync(m => m.PhotoId == id);
 
             return View(photo);
         }
